@@ -1,0 +1,49 @@
+/* style.scss */
+.App {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 20px;
+}
+
+.controls input {
+  margin: 5px;
+  padding: 8px;
+  width: 200px;
+}
+
+.controls button {
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+#treeWrapper {
+  width: 100%;
+  height: 80vh;
+  background-color: #f0f0f0;
+  overflow: auto;
+}
+
+.node-circle {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 2px;
+}
+
+.node-name {
+  font-size: 14px;
+  fill: #555;
+  font-weight: bold;
+}
+
+.node-attributes {
+  font-size: 12px;
+  fill: #777;
+}
