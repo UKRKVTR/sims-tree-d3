@@ -5,8 +5,17 @@ import './style.scss'
 
 function Main () {
   const treeContainer = useRef(null)
+  const [background, setBackground] = useState('')
+  const [visible, setVisible] = useState(false)
+  const [backgroundInput, setBackgroundInput] = useState('')
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 })
 
+  const handleInputChange = event => {
+    setBackgroundInput(event.target.value)
+  }
+  const changeBackground = () => {
+    setBackground(backgroundInput)
+  }
   const defaultFamilyTree = {
     name: 'Глава семьи',
     attributes: {
@@ -211,9 +220,27 @@ function Main () {
   }
 
   return (
-    <div className='App'>
+    <div
+      className='App'
+      style={{
+        backgroundImage: `url(${background})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        width: '100%',
+        height: '100vh'
+      }}
+    >
       <h1>Древо семьи</h1>
-      <div className='controls'>
+      <button
+        onClick={() => {
+          setVisible(!visible)
+        }}
+        style={{ background: 'none', border: 'none' }}
+      >
+        <img src='../../../public/pngegg (5).png' alt='' width='80px' />
+      </button>
+      <div className='controls' style={{ display: visible ? 'block' : 'none' }}>
         <button onClick={handleAddNode}>Добавить узел</button>
         <button onClick={handleRemoveNode}>Удалить узел</button>
         <button onClick={handleEditNode}>Редактировать узел</button>
@@ -269,6 +296,15 @@ function Main () {
             }
           }}
         />
+      </div>
+      <div className='backgroundLink'>
+        <input
+          type='text'
+          value={backgroundInput}
+          className='backgroundSrc'
+          onChange={handleInputChange}
+        />
+        <button onClick={changeBackground}>Change Background</button>
       </div>
     </div>
   )
