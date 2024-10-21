@@ -238,8 +238,8 @@ function Main () {
         }}
         style={{ background: 'none', border: 'none' }}
       >
-        хуй
-        <img src='../../../public/pngegg (5).png' alt='' width='80px' />
+        эта ебучая кнопка которая не отображается
+        {/* <img src='../../../public/pngegg (5).png' alt='' width='80px' /> */}
       </button>
       <div className='controls' style={{ display: visible ? 'block' : 'none' }}>
         <button onClick={handleAddNode}>Добавить узел</button>
